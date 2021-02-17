@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count-Timer</title>
+    <style>
+        *{
+            box-sizing: border-box ;
+        }
+        body{
+            background-image: url("./tyler-nix-tkoZIdfFHOE-unsplash.jpg");
+            background-size: cover;
+            min-height: 100vh;
+           color:white;
+            background-position: center center;
+            font-family: cursive;
+            margin: 0;
+           
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .countdown-container{
+            display: flex;
+            flex-wrap:  wrap;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        h1{
+            font-weight: normal;
+            font-size: 4rem;
+            margin-top: 5rem;
+        }
+        .big-text{
+            font-weight: bold;
+            font-size: 6rem;
+            line-height: 1;
+            margin: 0 2rem;
+        }
+        .countdown-e1 {
+            text-align: center;
+        }
+        .countdown-e1 span{
+            font-size: 1.5rem;
+
+        }
+        img{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>New Year </h1>
+    <div class="countdown-container">
+        <div class=" countdown-e1 days-c">
+            <p class="big-text" id="days">0</p>
+            <span>Days</span>
+        </div>
+        <div class=" countdown-e1 hours-c">
+            <p class="big-text" id="hours">0</p>
+            <span>hours</span>
+
+        </div>
+        <div class="countdown-e1 min-c">
+            <p class="big-text" id="mins">0</p>
+            <span>Minutes</span>
+        </div>
+        <div class="countdown-e1 seconds-c">
+            <p class="big-text" id="seconds">0</p>
+            <span>Seconds</span>
+        </div>
+
+
+    </div>
+    <script>
+        const daysE1=document.getElementById('days')
+        const hoursE1=document.getElementById('hours')
+
+        const minsE1=document.getElementById('mins')
+
+        const secondsE1=document.getElementById('seconds')
+
+
+
+
+
+
+
+        const newYear='1 Jan 2021'
+        function countdown(){
+            const newYearDate=new Date(newYear)
+            const currentDate=new Date();
+            const totalSeconds=(newYearDate-currentDate)/1000
+            const days=Math.floor(totalSeconds/3600/24)
+            const hours=Math.floor(totalSeconds/3600)%24
+            const minutes=Math.floor(totalSeconds/60)%60
+            const seconds=Math.floor(totalSeconds)%60
+
+
+            daysE1.innerHTML=days
+            hoursE1.innerHTML=hours
+            minsE1.innerHTML=minutes
+            secondsE1.innerHTML=seconds
+            
+            
+
+            
+        }
+        function formatTime(time){
+            return time<10 ? `0${time}`:time;
+        }
+        setInterval(countdown,1000)
+    </script>
+    
+</body>
+</html>

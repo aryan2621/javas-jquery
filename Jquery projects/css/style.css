@@ -1,0 +1,15 @@
+.avatar{
+    width: 100%;
+}
+*{
+    font-family: cursive;
+    /* align-items: center; */
+    padding: 10px;
+    font-weight: bolder;
+}
+body{
+    background: linear-gradient(to right,rgb(165, 156, 156),white);
+}.
+#navbar{
+    background: lightblue;
+}
